@@ -1,0 +1,87 @@
+$appHeight = 768px
+$topHeight = 65px
+$appWidth = 1024px
+$leftWidth = 215px
+$footerHeight = 20px
+$updateHeight = 25px
+$marqueeHeight = 29px
+
+#app
+  width $appWidth
+  height $appHeight
+  margin auto
+  box-sizing border-box
+  border 1px solid black
+  font-family '微軟正黑體'
+  
+#top
+  width 100%
+  height $topHeight
+  text-align center
+  
+#middle
+  width 100%
+  height 'calc(%s - %s - %s)' % ($appHeight $topHeight $footerHeight)
+
+#left
+  float left
+  width $leftWidth
+  height 100%
+  position relative
+
+#menu
+  top 0
+  position absolute
+  height 'calc(100% - %s)' % $updateHeight
+  h1
+    color rgb(90, 221, 204)
+    text-align center
+    text-decoration underline
+  table 
+    margin auto
+  td
+    width 200px
+    height 35px
+    font-size 18px
+    text-align center
+    background url('~@/assets/menu1.png') no-repeat
+    &:hover
+      background url('~@/assets/menu2.png') no-repeat
+
+#update
+  text-align center
+  height $updateHeight
+  width 100%
+  position absolute
+  bottom 0
+
+#right
+  width 'calc(100% - %s)' % $leftWidth
+  height 100%
+  float left
+  position relative
+#marquee
+  height $marqueeHeight
+  width 100%
+  font-size 24px
+  color #00f
+  position absolute
+  top 0
+#content
+  height 'calc(100% - %s)' % $marqueeHeight
+  width 100%
+  bottom 0
+  position absolute
+  background url('~@/assets/0101.jpg')
+  font-size 24px
+  font-weight bold
+  font-style italic
+  text-align center
+  color #00f
+  img
+    width 250px
+    height 250px
+#footer
+  text-align: center
+  width: 100%
+  height: $footerHeight
